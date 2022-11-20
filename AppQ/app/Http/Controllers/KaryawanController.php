@@ -18,4 +18,28 @@ class KaryawanController extends Controller
 
     }
 
+    public function add()
+    {
+        // call view add
+
+        return view('add');
+    }
+
+    public function save(Request $request)
+
+        {
+            //action save form 
+
+            DB::table('users')->Insert([
+                
+                'id'    => $request->id,
+                'name'  => $request->name,
+                'email' => $request->email,
+                'telp'  => $request->telp,
+
+            ]);
+
+            return redirect('/karyawan');
+        }
+
 }

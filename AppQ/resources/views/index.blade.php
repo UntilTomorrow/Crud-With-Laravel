@@ -60,6 +60,6 @@
 		@endforeach
 	</table>
  
- 
+
 </body>
 </html>

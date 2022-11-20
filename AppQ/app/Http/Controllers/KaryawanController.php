@@ -31,7 +31,7 @@ class KaryawanController extends Controller
             //action save form 
 
             DB::table('users')->Insert([
-                
+
                 'id'    => $request->id,
                 'name'  => $request->name,
                 'email' => $request->email,
@@ -41,5 +41,40 @@ class KaryawanController extends Controller
 
             return redirect('/karyawan');
         }
+
+    public function edit ($id) 
+
+        {
+            //get data based on ID
+
+            $karyawan = DB::table('users') -> where ('id',$id)->get();
+
+            // passing data karyawan to view Edit.blade.php
+            return view ('edit', ['karyawan' => $karyawan]);
+        }
+
+    public function update(Request $request)    
+
+        {
+            //action update data 
+            DB::table('users') ->where('id', $request ->id)-> update ([
+                'id' => $request->id,
+                'name' => $request->name,
+                'email' => $request->email,
+                'telp' => $request->telp
+
+            ]);
+
+            return redirect('/karyawan');
+
+        }
+
+    public function del($id)    
+    {
+        // action delete data based on ID 
+        DB:: table('users')->where('id', $id)-> delete();
+
+        return redirect('/karyawan');
+    }
 
 }

@@ -31,7 +31,7 @@
   </div>
 </nav>
 <br/>
-	<a href="/karyawan/add" class="btn btn-primary btn-lg  tabindex="3" role="button" aria-disabled="true"> +Tambah Pegawai Baru</a>
+	<a href="/karyawan/add" class="btn btn-primary btn-lg  tabindex="3" role="button" aria-disabled="true"> Add</a>
 	
     
 	<br/>
@@ -54,12 +54,12 @@
 			<td>
 				<a href="/karyawan/edit/{{ $p->id }}" class="btn btn-secondary ">Edit</a>
 				|
-				<a href="/karyawan/hapus/{{ $p->id }}" class="btn btn-secondary ">Hapus</a>
+				<a href="/karyawan/del/{{ $p->id }}" class="btn btn-secondary ">Delete</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
  
-
+ 
 </body>
 </html>

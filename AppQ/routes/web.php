@@ -13,4 +13,7 @@ Route::get('/', function () {
 //route CRUD
 
 Route::get('/karyawan','\App\Http\Controllers\KaryawanController@index');
+Route::get('/karyawan/add','\App\Http\Controllers\KaryawanController@add');
+Route::post('/karyawan/save','\App\Http\Controllers\KaryawanController@save');
+
 
